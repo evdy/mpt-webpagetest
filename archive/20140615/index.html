@@ -1,0 +1,31 @@
+<html>
+<head>
+    <meta HTTP-EQUIV="refresh" CONTENT="1800; URL=http://inp.dev2.medpagetoday.com/wpt/">
+    <title>MPT Page Load</title>
+    <!-- Load jQuery -->
+    <script language="javascript" type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <!-- Load Google JSAPI -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <!-- Load Page Load js file -->
+    <script type="text/javascript" src="scripts/chartdata.js?6"></script>
+</head>
+<body style="background-color: #eeeeee; height: 2570px;" onload="initChart(1);">
+    &nbsp;&nbsp;<a style="font-family: calibri; font-size: 10pt;" href="#" onclick="initChart(1);">MPT</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a style="font-family: calibri; font-size: 10pt;" href="#" onclick="initChart(2);">EH</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+    <a style="font-family: calibri; font-size: 10pt;" href="#" onclick="initChart(3);">WTE</a>
+    <div id="chart_today" style="position: absolute; left: 10px; top: 30px; width: 49%; height: 500px; border: 1px solid #dddddd;"></div>
+    <div id="chart_today_2" style="position: absolute; right: 10px; top: 30px; width: 49%; height: 500px; border: 1px solid #dddddd;"></div>
+    
+    <div id="chart_7day" style="position: absolute; left: 10px; top: 540px; width: 49%; height: 500px; text-align: center; border: 1px solid #dddddd;"></div>
+    <div id="chart_7day_2" style="position: absolute; right: 10px; top: 540px; width: 49%; height: 500px; border: 1px solid #dddddd;"></div>
+    
+    <div id="chart_30day" style="position: absolute; left: 10px; top: 1050px; width: 49%; height: 500px; text-align: center; border: 1px solid #dddddd;"></div>
+    <div id="chart_30day_2" style="position: absolute; right: 10px; top: 1050px; width: 49%; height: 500px; border: 1px solid #dddddd;"></div>
+    
+    <div id="chart_90day" style="position: absolute; left: 10px; top: 1560px; width: 49%; height: 500px; text-align: center; border: 1px solid #dddddd;"></div>
+    <div id="chart_90day_2" style="position: absolute; right: 10px; top: 1560px; width: 49%; height: 500px; border: 1px solid #dddddd;"></div>
+    
+    <div id="chart_6month" style="position: absolute; left: 10px; top: 2070px; width: 49%; height: 500px; text-align: center; border: 1px solid #dddddd;"></div>
+    <div id="chart_6month_2" style="position: absolute; right: 10px; top: 2070px; width: 49%; height: 500px; border: 1px solid #dddddd;"></div>
+</body>
+</html>

@@ -1,0 +1,150 @@
+<html>
+<head>
+    <title>MPT Page Load</title>
+    <!-- Load jQuery -->
+    <script language="javascript" type="text/javascript" 
+        src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js">
+    </script>
+    <!-- Load Google JSAPI -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawCharttoday);
+
+        function drawCharttoday() {
+            var jsonData = $.ajax({
+                url: "index.php?show=today",
+                dataType: "json",
+                async: false
+            }).responseText;
+            
+            var data = new google.visualization.DataTable(jsonData)
+            
+            var options = {
+                title: 'MPT Page Load - Today',
+                linewidth: 1,
+                pointSize: 5,
+                chartArea: {left: 75, width: "90%"},
+                legend: {position: 'bottom'},
+                vAxis: {title: 'Seconds', titleTextStyle: {color: '#FF0000'}}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_today'));
+            chart.draw(data, options);
+        }
+        
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart7day);
+        
+        function drawChart7day() {
+            var jsonData = $.ajax({
+                url: "index.php?show=7day",
+                dataType: "json",
+                async: false
+            }).responseText;
+            
+            var data = new google.visualization.DataTable(jsonData)
+            
+            var options = {
+                title: 'MPT Page Load - Last 7 days',
+                linewidth: 1,
+                pointSize: 5,
+                chartArea: {left: 75, width: "90%"},
+                legend: {position: 'bottom'},
+                vAxis: {title: 'Seconds', titleTextStyle: {color: '#FF0000'}}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_7day'));
+            chart.draw(data, options);
+        }
+        
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart30day);
+        
+        function drawChart30day() {
+            var jsonData = $.ajax({
+                url: "index.php?show=30day",
+                dataType: "json",
+                async: false
+            }).responseText;
+            
+            var data = new google.visualization.DataTable(jsonData)
+            
+            var options = {
+                title: 'MPT Page Load - Last 30 days',
+                linewidth: 3,
+                pointSize: 5,
+                chartArea: {left: 75, width: "90%"},
+                legend: {position: 'bottom'},
+                vAxis: {title: 'Seconds', titleTextStyle: {color: '#FF0000'}}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_30day'));
+            chart.draw(data, options);
+        }
+        
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart90day);
+        
+        function drawChart90day() {
+            var jsonData = $.ajax({
+                url: "index.php?show=90day",
+                dataType: "json",
+                async: false
+            }).responseText;
+            
+            var data = new google.visualization.DataTable(jsonData)
+            
+            var options = {
+                title: 'MPT Page Load - Last 90 days',
+                linewidth: 3,
+                pointSize: 5,
+                chartArea: {left: 75, width: "90%"},
+                legend: {position: 'bottom'},
+                vAxis: {title: 'Seconds', titleTextStyle: {color: '#FF0000'}},
+                hAxis: {title: 'Week #', titleTextStyle: {color: '#FF0000'}}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_90day'));
+            chart.draw(data, options);
+        }
+        
+        google.load("visualization", "1", { packages: ["corechart"] });
+        google.setOnLoadCallback(drawChart6month);
+        
+        function drawChart6month() {
+            var jsonData = $.ajax({
+                url: "index.php?show=6month",
+                dataType: "json",
+                async: false
+            }).responseText;
+            
+            var data = new google.visualization.DataTable(jsonData)
+            
+            var options = {
+                title: 'MPT Page Load - Last 6 months',
+                linewidth: 3,
+                pointSize: 5,
+                chartArea: {left: 75, width: "90%"},
+                legend: {position: 'bottom'},
+                vAxis: {title: 'Seconds', titleTextStyle: {color: '#FF0000'}}
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_6month'));
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body style="text-align: center;">
+    <div id="chart_today" style="width: 1200px; height: 500px; text-align: center; margin-bottom: 10px; border: 1px solid #dddddd;">
+    </div>
+    <div id="chart_7day" style="width: 1200px; height: 500px; text-align: center; margin-bottom: 10px; border: 1px solid #dddddd;">
+    </div>
+    <div id="chart_30day" style="width: 1200px; height: 500px; text-align: center; margin-bottom: 10px; border: 1px solid #dddddd;">
+    </div>
+    <div id="chart_90day" style="width: 1200px; height: 500px; text-align: center; margin-bottom: 10px; border: 1px solid #dddddd;">
+    </div>
+    <div id="chart_6month" style="width: 1200px; height: 500px; text-align: center; margin-bottom: 10px; border: 1px solid #dddddd;">
+    </div>
+</body>
+</html>
